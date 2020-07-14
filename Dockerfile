@@ -11,7 +11,7 @@ RUN chmod g+rwx /var/cache/nginx /var/run /var/log/nginx && \
     sed -i.bak 's/^user/#user/' /etc/nginx/nginx.conf && \
     # Increase the number of worker connections per process
     sed -i 's/worker_connections\s*1024/worker_connections 10240/' /etc/nginx/nginx.conf && \
-    apk add curl lftp
+    apk add curl lftp rsync
 
 WORKDIR /usr/share/nginx/html/
 EXPOSE 8081
